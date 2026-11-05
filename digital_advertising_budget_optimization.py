@@ -1070,9 +1070,3 @@ if not CONFIG["keep_big_files"]:
             p.unlink()
     print("Large temporary Parquet files removed (set keep_big_files=True to keep them).")
 
-"""## 11. Limitations & next steps
-* **All ad performance is simulated.** The engine is only as good as the history it learns from; with real company data, set `CONFIG["real_data_csv"]` (or `upload_real_data=True` in Colab, or use the upload button in Section 9) and everything downstream runs on your file.
-* Platform effects are modelled by *average* ROAS and a fitted saturation curve; a production system would also use time-series models, attribution (multi-touch) and incrementality tests.
-* The MapReduce here is a faithful *simulation of the programming model* on one machine; real Hadoop adds disk-based shuffling and cluster coordination.
-* Possible upgrades: seasonal forecasting for the next month, constrained optimisation (e.g. `scipy.optimize`) on the fitted response curves, a Streamlit dashboard for managers.
-"""
